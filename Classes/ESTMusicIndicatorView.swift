@@ -70,7 +70,7 @@ public class ESTMusicIndicatorView: UIView {
     public var hidesWhenStopped: Bool = true {
         didSet {
             if state == .ESTMusicIndicatorViewStateStopped {
-                hidden = hidesWhenStopped
+                isHidden = hidesWhenStopped
             }
         }
     }
@@ -94,7 +94,7 @@ public class ESTMusicIndicatorView: UIView {
             if state == .ESTMusicIndicatorViewStateStopped {
                 stopAnimating()
                 if hidesWhenStopped {
-                    hidden = true
+                    isHidden = true
                 }
             } else {
                 if state == .ESTMusicIndicatorViewStatePlaying {
@@ -102,7 +102,7 @@ public class ESTMusicIndicatorView: UIView {
                 } else {
                     stopAnimating()
                 }
-                hidden = false
+                isHidden = false
             }
         }
     }
@@ -126,22 +126,22 @@ public class ESTMusicIndicatorView: UIView {
         addSubview(contentView)
         prepareLayoutPriorities()
         setNeedsUpdateConstraints()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationDidEnterBackground:", name: UIApplicationDidEnterBackgroundNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationDidEnterBackground(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
     private func prepareLayoutPriorities() {
         // Custom views should set default values for both orientations on creation,
         // based on their content, typically to NSLayoutPriorityDefaultLow or NSLayoutPriorityDefaultHigh.
-        setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: UILayoutConstraintAxis.Horizontal)
-        setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: UILayoutConstraintAxis.Vertical)
+        setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: UILayoutConstraintAxis.horizontal)
+        setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: UILayoutConstraintAxis.vertical)
         
-        setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, forAxis: UILayoutConstraintAxis.Horizontal)
-        setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, forAxis: UILayoutConstraintAxis.Vertical)
+        setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, for: UILayoutConstraintAxis.horizontal)
+        setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, for: UILayoutConstraintAxis.vertical)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     // MARK: Auto Layout
@@ -149,18 +149,18 @@ public class ESTMusicIndicatorView: UIView {
     override public func updateConstraints() {
         if !hasInstalledConstraints {
             addConstraint(NSLayoutConstraint(item: self,
-                                        attribute: .CenterX,
-                                        relatedBy: .Equal,
+                                        attribute: .centerX,
+                                        relatedBy: .equal,
                                         toItem: contentView,
-                                        attribute: .CenterX,
+                                        attribute: .centerX,
                                         multiplier: 1.0,
                                         constant: 0.0))
             
             addConstraint(NSLayoutConstraint(item: self,
-                                        attribute: .CenterY,
-                                        relatedBy: .Equal,
+                                        attribute: .centerY,
+                                        relatedBy: .equal,
                                         toItem: contentView,
-                                        attribute: .CenterY,
+                                        attribute: .centerY,
                                         multiplier: 1.0,
                                         constant: 0.0))
             
@@ -169,18 +169,18 @@ public class ESTMusicIndicatorView: UIView {
         super.updateConstraints()
     }
     
-    override public func intrinsicContentSize() -> CGSize {
-        return contentView.intrinsicContentSize()
+    public override var intrinsicContentSize: CGSize {
+        return contentView.intrinsicContentSize
     }
     
-    override public func viewForBaselineLayout() -> UIView {
+    override public func forBaselineLayout() -> UIView {
         return contentView
     }
     
     // MARK: Frame-Based Layout
     
-    override public func sizeThatFits(size: CGSize) -> CGSize {
-        return intrinsicContentSize()
+    override public func sizeThatFits(_ size: CGSize) -> CGSize {
+        return intrinsicContentSize
     }
     
     // MARK: Helpers

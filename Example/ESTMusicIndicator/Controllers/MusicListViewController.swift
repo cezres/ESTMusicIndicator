@@ -22,19 +22,19 @@ class MusicListViewController: UITableViewController, UIGestureRecognizerDelegat
         tableView.tableFooterView = UIView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         createIndicatorView()
     }
     
     func createIndicatorView() {
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenSize: CGRect = UIScreen.main.bounds
         indicatorView = ESTMusicIndicatorView.init(frame: CGRect(origin: CGPoint(x: (screenSize.width - 50), y: 0), size: CGSize(width: 50, height: 44)))
         indicatorView.hidesWhenStopped = false
-        indicatorView.tintColor = UIColor.redColor()
+        indicatorView.tintColor = UIColor.red
         navigationController?.navigationBar.addSubview(indicatorView)
         
-        let tap = UITapGestureRecognizer(target: self, action: Selector("didTapIndicator:"))
+        let tap = UITapGestureRecognizer(target: self, action: Selector(("didTapIndicator:")))
         tap.delegate = self
         indicatorView.addGestureRecognizer(tap)
     }
@@ -51,22 +51,24 @@ class MusicListViewController: UITableViewController, UIGestureRecognizerDelegat
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles!.count
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 57;
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 57
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "musicListCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MusicListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! MusicListCell
         cell.musicNumber = indexPath.row + 1
         cell.musicTitleLabel.text = titles![indexPath.row]
         return cell
@@ -74,18 +76,18 @@ class MusicListViewController: UITableViewController, UIGestureRecognizerDelegat
     
     // MARK: - Table view data delegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        updateMusicIndicatorWithIndexPath(indexPath)
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        updateMusicIndicatorWithIndexPath(indexPath: indexPath)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
     // MARK: - Update music indicator
     
-    func updateMusicIndicatorWithIndexPath(indexPath: NSIndexPath) {
+    func updateMusicIndicatorWithIndexPath(indexPath: IndexPath) {
         for cell in tableView.visibleCells as! [MusicListCell] {
             cell.state = .ESTMusicIndicatorViewStateStopped
         }
-        let musicsCell = tableView.cellForRowAtIndexPath(indexPath) as! MusicListCell
+        let musicsCell = tableView.cellForRow(at: indexPath) as! MusicListCell
         musicsCell.state = .ESTMusicIndicatorViewStatePlaying
     }
 

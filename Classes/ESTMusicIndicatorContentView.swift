@@ -63,23 +63,24 @@ class ESTMusicIndicatorContentView: UIView {
         var xOffset:CGFloat = 0.0
         
         for i in 1...kBarCount {
-            let newLayer = createBarLayerWithXOffset(xOffset, layerIndex: i)
+            let newLayer = createBarLayerWithXOffset(xOffset: xOffset, layerIndex: i)
             barLayers.append(newLayer)
             layer.addSublayer(newLayer)
-            xOffset = CGRectGetMaxX(newLayer.frame) + horizontalBarSpacing()
+            xOffset = newLayer.frame.maxX + horizontalBarSpacing()
         }
     }
     
     private func createBarLayerWithXOffset(xOffset: CGFloat, layerIndex: Int) -> CALayer {
         let layer: CALayer = CALayer()
-        layer.anchorPoint = CGPointMake(0.0, 1.0) // At the bottom-left corner
-        layer.position = CGPointMake(xOffset, kBarMaxPeakHeight) // In superview's coordinate
-        layer.bounds = CGRectMake(0.0, 0.0, kBarWidth, (CGFloat(layerIndex) * kBarMaxPeakHeight/CGFloat(kBarCount))) // In its own coordinate }
+        
+        layer.anchorPoint = CGPoint(x: 0.0, y: 1.0) // At the bottom-left corner
+        layer.position = CGPoint(x: xOffset, y: kBarMaxPeakHeight) // In superview's coordinate
+        layer.bounds = CGRect(x: 0.0, y: 0.0, width: kBarWidth, height: (CGFloat(layerIndex) * kBarMaxPeakHeight/CGFloat(kBarCount))) // In its own coordinate }
         return layer
     }
     
     private func horizontalBarSpacing() -> CGFloat {
-        if UIScreen.mainScreen().scale == 2.0 {
+        if UIScreen.main.scale == 2.0 {
             return kRetinaHorizontalBarSpacing
         } else {
             return kHorizontalBarSpacing
@@ -88,36 +89,36 @@ class ESTMusicIndicatorContentView: UIView {
     
     override func tintColorDidChange() {
         for layer in barLayers{
-            layer.backgroundColor = tintColor.CGColor
+            layer.backgroundColor = tintColor.cgColor
         }
     }
     
-    override func intrinsicContentSize() -> CGSize {
+    override var intrinsicContentSize: CGSize {
         var unionFrame:CGRect = CGRect.zero
         
         for layer in barLayers {
-            unionFrame = CGRectUnion(unionFrame, layer.frame)
+            unionFrame = unionFrame.union(layer.frame)
         }
         
-        return unionFrame.size;
+        return unionFrame.size
     }
     
     override func updateConstraints() {
         if !hasInstalledConstraints {
-            let size = intrinsicContentSize()
+            let size = intrinsicContentSize
             addConstraint(NSLayoutConstraint(item: self,
-                                        attribute: .Width,
-                                        relatedBy: .Equal,
+                                        attribute: .width,
+                                        relatedBy: .equal,
                                             toItem: nil,
-                                        attribute: .NotAnAttribute,
+                                        attribute: .notAnAttribute,
                                         multiplier: 0.0,
                                         constant: size.width));
             
             addConstraint(NSLayoutConstraint(item: self,
-                                        attribute: .Height,
-                                        relatedBy: .Equal,
+                                        attribute: .height,
+                                        relatedBy: .equal,
                                         toItem: nil,
-                                        attribute: .NotAnAttribute,
+                                        attribute: .notAnAttribute,
                                         multiplier: 0.0,
                                         constant: size.height));
             hasInstalledConstraints = true
@@ -129,18 +130,18 @@ class ESTMusicIndicatorContentView: UIView {
         let basePeriod = kMinBaseOscillationPeriod + (drand48() * (kMaxBaseOscillationPeriod - kMinBaseOscillationPeriod))
         
         for layer in barLayers {
-            startOscillatingBarLayer(layer, basePeriod: basePeriod)
+            startOscillatingBarLayer(layer: layer, basePeriod: basePeriod)
         }
     }
     
     func stopOscillation() {
         for layer in barLayers {
-            layer.removeAnimationForKey(kOscillationAnimationKey)
+            layer.removeAnimation(forKey: kOscillationAnimationKey)
         }
     }
     
     func isOscillating() -> Bool {
-        if let _ = barLayers.first?.animationForKey(kOscillationAnimationKey) {
+        if let _ = barLayers.first?.animation(forKey: kOscillationAnimationKey) {
             return true
         } else {
             return false
@@ -149,13 +150,13 @@ class ESTMusicIndicatorContentView: UIView {
     
     func startDecay() {
         for layer in barLayers {
-            startDecayingBarLayer(layer)
+            startDecayingBarLayer(layer: layer)
         }
     }
     
     func stopDecay() {
         for layer in barLayers {
-            layer.removeAnimationForKey(kDecayAnimationKey)
+            layer.removeAnimation(forKey: kDecayAnimationKey)
         }
     }
     
@@ -170,25 +171,25 @@ class ESTMusicIndicatorContentView: UIView {
         toBounds.size.height = peakHeight
         
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "bounds")
-        animation.fromValue = NSValue(CGRect:fromBouns)
-        animation.toValue = NSValue(CGRect:toBounds)
+        animation.fromValue = NSValue(cgRect:fromBouns)
+        animation.toValue = NSValue(cgRect:toBounds)
         animation.repeatCount = Float.infinity // Forever
         animation.autoreverses = true
-        animation.duration = NSTimeInterval((CGFloat(basePeriod) / 2) * (kBarMaxPeakHeight / peakHeight))
+        animation.duration = TimeInterval((CGFloat(basePeriod) / 2) * (kBarMaxPeakHeight / peakHeight))
         animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseIn)
         
-        layer.addAnimation(animation, forKey: kOscillationAnimationKey)
+        layer.add(animation, forKey: kOscillationAnimationKey)
     }
     
     private func startDecayingBarLayer(layer: CALayer) {
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "bounds")
         
-        animation.fromValue = NSValue(CGRect:CALayer(layer: layer.presentationLayer()!).bounds)
-        animation.toValue = NSValue(CGRect:layer.bounds)
+        animation.fromValue = NSValue(cgRect:CALayer(layer: layer.presentation()!).bounds)
+        animation.toValue = NSValue(cgRect:layer.bounds)
         animation.duration = kDecayDuration
         animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
         
-        layer.addAnimation(animation, forKey: kDecayAnimationKey)
+        layer.add(animation, forKey: kDecayAnimationKey)
     }
 
 }

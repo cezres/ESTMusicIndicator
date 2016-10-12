@@ -8,69 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		564E7FEC1C14624500353CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E7FEB1C14624500353CC0 /* AppDelegate.swift */; };
-		564E7FF31C14624500353CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564E7FF21C14624500353CC0 /* Assets.xcassets */; };
 		564E7FF61C14624500353CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564E7FF41C14624500353CC0 /* LaunchScreen.storyboard */; };
-		564E80011C14624500353CC0 /* ESTMusicIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E80001C14624500353CC0 /* ESTMusicIndicatorTests.swift */; };
-		564E800C1C14624500353CC0 /* ESTMusicIndicatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E800B1C14624500353CC0 /* ESTMusicIndicatorUITests.swift */; };
 		567B8C651C31900A001EE48A /* MusicList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567B8C641C31900A001EE48A /* MusicList.storyboard */; };
 		567B8C671C3190A4001EE48A /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B8C661C3190A4001EE48A /* MusicListViewController.swift */; };
 		567B8C691C3191FD001EE48A /* MusicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B8C681C3191FD001EE48A /* MusicListCell.swift */; };
 		56C1B9091C36963400990D01 /* ESTMusicIndicatorContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1B9071C36963400990D01 /* ESTMusicIndicatorContentView.swift */; };
 		56C1B90A1C36963400990D01 /* ESTMusicIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1B9081C36963400990D01 /* ESTMusicIndicatorView.swift */; };
+		6E22A5391DADEA5700F3354C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E22A5381DADEA5700F3354C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		564E7FFD1C14624500353CC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 564E7FE01C14624500353CC0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 564E7FE71C14624500353CC0;
-			remoteInfo = ESTMusicIndicator;
-		};
-		564E80081C14624500353CC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 564E7FE01C14624500353CC0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 564E7FE71C14624500353CC0;
-			remoteInfo = ESTMusicIndicator;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		564E7FE81C14624500353CC0 /* ESTMusicIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTMusicIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564E7FEB1C14624500353CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		564E7FF21C14624500353CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		564E7FF51C14624500353CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		564E7FF71C14624500353CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		564E7FFC1C14624500353CC0 /* ESTMusicIndicatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESTMusicIndicatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		564E80001C14624500353CC0 /* ESTMusicIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESTMusicIndicatorTests.swift; sourceTree = "<group>"; };
-		564E80021C14624500353CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		564E80071C14624500353CC0 /* ESTMusicIndicatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESTMusicIndicatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		564E800B1C14624500353CC0 /* ESTMusicIndicatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESTMusicIndicatorUITests.swift; sourceTree = "<group>"; };
-		564E800D1C14624500353CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567B8C641C31900A001EE48A /* MusicList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicList.storyboard; sourceTree = "<group>"; };
 		567B8C661C3190A4001EE48A /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		567B8C681C3191FD001EE48A /* MusicListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListCell.swift; sourceTree = "<group>"; };
 		56C1B9071C36963400990D01 /* ESTMusicIndicatorContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTMusicIndicatorContentView.swift; sourceTree = "<group>"; };
 		56C1B9081C36963400990D01 /* ESTMusicIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTMusicIndicatorView.swift; sourceTree = "<group>"; };
+		6E22A5381DADEA5700F3354C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ESTMusicIndicator/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		564E7FE51C14624500353CC0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		564E7FF91C14624500353CC0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		564E80041C14624500353CC0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,8 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				564E7FEA1C14624500353CC0 /* ESTMusicIndicator */,
-				564E7FFF1C14624500353CC0 /* ESTMusicIndicatorTests */,
-				564E800A1C14624500353CC0 /* ESTMusicIndicatorUITests */,
 				564E7FE91C14624500353CC0 /* Products */,
 				D53CCC9AFDA63197E363E189 /* Frameworks */,
 			);
@@ -95,8 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				564E7FE81C14624500353CC0 /* ESTMusicIndicator.app */,
-				564E7FFC1C14624500353CC0 /* ESTMusicIndicatorTests.xctest */,
-				564E80071C14624500353CC0 /* ESTMusicIndicatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,24 +70,6 @@
 			path = ESTMusicIndicator;
 			sourceTree = "<group>";
 		};
-		564E7FFF1C14624500353CC0 /* ESTMusicIndicatorTests */ = {
-			isa = PBXGroup;
-			children = (
-				564E80001C14624500353CC0 /* ESTMusicIndicatorTests.swift */,
-				564E80021C14624500353CC0 /* Info.plist */,
-			);
-			path = ESTMusicIndicatorTests;
-			sourceTree = "<group>";
-		};
-		564E800A1C14624500353CC0 /* ESTMusicIndicatorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				564E800B1C14624500353CC0 /* ESTMusicIndicatorUITests.swift */,
-				564E800D1C14624500353CC0 /* Info.plist */,
-			);
-			path = ESTMusicIndicatorUITests;
-			sourceTree = "<group>";
-		};
 		564E801A1C14627800353CC0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +81,7 @@
 		564E801B1C14627800353CC0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				564E7FF21C14624500353CC0 /* Assets.xcassets */,
+				6E22A5381DADEA5700F3354C /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -203,42 +142,6 @@
 			productReference = 564E7FE81C14624500353CC0 /* ESTMusicIndicator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		564E7FFB1C14624500353CC0 /* ESTMusicIndicatorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 564E80131C14624500353CC0 /* Build configuration list for PBXNativeTarget "ESTMusicIndicatorTests" */;
-			buildPhases = (
-				564E7FF81C14624500353CC0 /* Sources */,
-				564E7FF91C14624500353CC0 /* Frameworks */,
-				564E7FFA1C14624500353CC0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				564E7FFE1C14624500353CC0 /* PBXTargetDependency */,
-			);
-			name = ESTMusicIndicatorTests;
-			productName = ESTMusicIndicatorTests;
-			productReference = 564E7FFC1C14624500353CC0 /* ESTMusicIndicatorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		564E80061C14624500353CC0 /* ESTMusicIndicatorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 564E80161C14624500353CC0 /* Build configuration list for PBXNativeTarget "ESTMusicIndicatorUITests" */;
-			buildPhases = (
-				564E80031C14624500353CC0 /* Sources */,
-				564E80041C14624500353CC0 /* Frameworks */,
-				564E80051C14624500353CC0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				564E80091C14624500353CC0 /* PBXTargetDependency */,
-			);
-			name = ESTMusicIndicatorUITests;
-			productName = ESTMusicIndicatorUITests;
-			productReference = 564E80071C14624500353CC0 /* ESTMusicIndicatorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,19 +149,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "The EST Group";
 				TargetAttributes = {
 					564E7FE71C14624500353CC0 = {
 						CreatedOnToolsVersion = 7.1.1;
-					};
-					564E7FFB1C14624500353CC0 = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = 564E7FE71C14624500353CC0;
-					};
-					564E80061C14624500353CC0 = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = 564E7FE71C14624500353CC0;
+						DevelopmentTeam = 959Q9RL588;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -276,8 +173,6 @@
 			projectRoot = "";
 			targets = (
 				564E7FE71C14624500353CC0 /* ESTMusicIndicator */,
-				564E7FFB1C14624500353CC0 /* ESTMusicIndicatorTests */,
-				564E80061C14624500353CC0 /* ESTMusicIndicatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,22 +183,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				567B8C651C31900A001EE48A /* MusicList.storyboard in Resources */,
+				6E22A5391DADEA5700F3354C /* Assets.xcassets in Resources */,
 				564E7FF61C14624500353CC0 /* LaunchScreen.storyboard in Resources */,
-				564E7FF31C14624500353CC0 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		564E7FFA1C14624500353CC0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		564E80051C14624500353CC0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,36 +203,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		564E7FF81C14624500353CC0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				564E80011C14624500353CC0 /* ESTMusicIndicatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		564E80031C14624500353CC0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				564E800C1C14624500353CC0 /* ESTMusicIndicatorUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		564E7FFE1C14624500353CC0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 564E7FE71C14624500353CC0 /* ESTMusicIndicator */;
-			targetProxy = 564E7FFD1C14624500353CC0 /* PBXContainerItemProxy */;
-		};
-		564E80091C14624500353CC0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 564E7FE71C14624500353CC0 /* ESTMusicIndicator */;
-			targetProxy = 564E80081C14624500353CC0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		564E7FF41C14624500353CC0 /* LaunchScreen.storyboard */ = {
@@ -379,8 +231,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -423,8 +277,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -443,6 +299,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -451,11 +308,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 959Q9RL588;
 				INFOPLIST_FILE = ESTMusicIndicator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.est-group.ESTMusicIndicator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -463,59 +322,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 959Q9RL588;
 				INFOPLIST_FILE = ESTMusicIndicator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.est-group.ESTMusicIndicator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		564E80141C14624500353CC0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ESTMusicIndicatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.est-group.ESTMusicIndicatorTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ESTMusicIndicator.app/ESTMusicIndicator";
-			};
-			name = Debug;
-		};
-		564E80151C14624500353CC0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ESTMusicIndicatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.est-group.ESTMusicIndicatorTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ESTMusicIndicator.app/ESTMusicIndicator";
-			};
-			name = Release;
-		};
-		564E80171C14624500353CC0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ESTMusicIndicatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.est-group.ESTMusicIndicatorUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ESTMusicIndicator;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		564E80181C14624500353CC0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ESTMusicIndicatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.est-group.ESTMusicIndicatorUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ESTMusicIndicator;
-				USES_XCTRUNNER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -536,24 +349,6 @@
 			buildConfigurations = (
 				564E80111C14624500353CC0 /* Debug */,
 				564E80121C14624500353CC0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		564E80131C14624500353CC0 /* Build configuration list for PBXNativeTarget "ESTMusicIndicatorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				564E80141C14624500353CC0 /* Debug */,
-				564E80151C14624500353CC0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		564E80161C14624500353CC0 /* Build configuration list for PBXNativeTarget "ESTMusicIndicatorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				564E80171C14624500353CC0 /* Debug */,
-				564E80181C14624500353CC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

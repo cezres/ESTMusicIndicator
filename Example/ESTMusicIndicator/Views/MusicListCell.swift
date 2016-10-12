@@ -17,7 +17,7 @@ class MusicListCell: UITableViewCell {
     var state: ESTMusicIndicatorViewState = .ESTMusicIndicatorViewStateStopped {
         didSet {
             musicIndicator.state = state
-            musicNumberLabel.hidden = state != .ESTMusicIndicatorViewStateStopped
+            musicNumberLabel.isHidden = state != .ESTMusicIndicatorViewStateStopped
         }
     }
     
@@ -32,7 +32,7 @@ class MusicListCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
