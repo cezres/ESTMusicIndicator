@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		564E7FEC1C14624500353CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E7FEB1C14624500353CC0 /* AppDelegate.swift */; };
 		564E7FF61C14624500353CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564E7FF41C14624500353CC0 /* LaunchScreen.storyboard */; };
 		567B8C651C31900A001EE48A /* MusicList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567B8C641C31900A001EE48A /* MusicList.storyboard */; };
 		567B8C671C3190A4001EE48A /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B8C661C3190A4001EE48A /* MusicListViewController.swift */; };
@@ -15,19 +14,21 @@
 		56C1B9091C36963400990D01 /* ESTMusicIndicatorContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1B9071C36963400990D01 /* ESTMusicIndicatorContentView.swift */; };
 		56C1B90A1C36963400990D01 /* ESTMusicIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1B9081C36963400990D01 /* ESTMusicIndicatorView.swift */; };
 		6E22A5391DADEA5700F3354C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E22A5381DADEA5700F3354C /* Assets.xcassets */; };
+		6E2F5C581DB086C8007C41F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F5C561DB086C8007C41F2 /* AppDelegate.swift */; };
+		6E2F5C591DB086C8007C41F2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F5C571DB086C8007C41F2 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		564E7FE81C14624500353CC0 /* ESTMusicIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTMusicIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		564E7FEB1C14624500353CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		564E7FF51C14624500353CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		564E7FF71C14624500353CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		567B8C641C31900A001EE48A /* MusicList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicList.storyboard; sourceTree = "<group>"; };
 		567B8C661C3190A4001EE48A /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		567B8C681C3191FD001EE48A /* MusicListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListCell.swift; sourceTree = "<group>"; };
 		56C1B9071C36963400990D01 /* ESTMusicIndicatorContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTMusicIndicatorContentView.swift; sourceTree = "<group>"; };
 		56C1B9081C36963400990D01 /* ESTMusicIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTMusicIndicatorView.swift; sourceTree = "<group>"; };
 		6E22A5381DADEA5700F3354C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ESTMusicIndicator/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		6E2F5C561DB086C8007C41F2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ESTMusicIndicator/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		6E2F5C571DB086C8007C41F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ESTMusicIndicator/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +90,8 @@
 		564E801C1C14627800353CC0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				564E7FEB1C14624500353CC0 /* AppDelegate.swift */,
-				564E7FF71C14624500353CC0 /* Info.plist */,
+				6E2F5C561DB086C8007C41F2 /* AppDelegate.swift */,
+				6E2F5C571DB086C8007C41F2 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2F5C591DB086C8007C41F2 /* Info.plist in Resources */,
 				567B8C651C31900A001EE48A /* MusicList.storyboard in Resources */,
 				6E22A5391DADEA5700F3354C /* Assets.xcassets in Resources */,
 				564E7FF61C14624500353CC0 /* LaunchScreen.storyboard in Resources */,
@@ -195,11 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2F5C581DB086C8007C41F2 /* AppDelegate.swift in Sources */,
 				567B8C671C3190A4001EE48A /* MusicListViewController.swift in Sources */,
 				56C1B90A1C36963400990D01 /* ESTMusicIndicatorView.swift in Sources */,
 				56C1B9091C36963400990D01 /* ESTMusicIndicatorContentView.swift in Sources */,
 				567B8C691C3191FD001EE48A /* MusicListCell.swift in Sources */,
-				564E7FEC1C14624500353CC0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

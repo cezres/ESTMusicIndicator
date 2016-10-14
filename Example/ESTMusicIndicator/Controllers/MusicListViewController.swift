@@ -43,9 +43,9 @@ class MusicListViewController: UITableViewController, UIGestureRecognizerDelegat
         startAnimating = !startAnimating
         
         if startAnimating {
-            indicatorView.state = .ESTMusicIndicatorViewStatePlaying
+            indicatorView.state = .playing
         } else {
-            indicatorView.state = .ESTMusicIndicatorViewStateStopped
+            indicatorView.state = .stopped
         }
         
     }
@@ -85,10 +85,10 @@ class MusicListViewController: UITableViewController, UIGestureRecognizerDelegat
     
     func updateMusicIndicatorWithIndexPath(indexPath: IndexPath) {
         for cell in tableView.visibleCells as! [MusicListCell] {
-            cell.state = .ESTMusicIndicatorViewStateStopped
+            cell.state = .stopped
         }
         let musicsCell = tableView.cellForRow(at: indexPath) as! MusicListCell
-        musicsCell.state = .ESTMusicIndicatorViewStatePlaying
+        musicsCell.state = .playing
     }
 
 }

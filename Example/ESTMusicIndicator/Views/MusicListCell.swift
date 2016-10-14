@@ -14,10 +14,10 @@ class MusicListCell: UITableViewCell {
     @IBOutlet weak var musicTitleLabel: UILabel!
     @IBOutlet weak var musicIndicator: ESTMusicIndicatorView!
     
-    var state: ESTMusicIndicatorViewState = .ESTMusicIndicatorViewStateStopped {
+    var state: ESTMusicIndicatorViewState = .stopped {
         didSet {
             musicIndicator.state = state
-            musicNumberLabel.isHidden = state != .ESTMusicIndicatorViewStateStopped
+            musicNumberLabel.isHidden = state != .stopped
         }
     }
     

@@ -37,19 +37,19 @@ public enum ESTMusicIndicatorViewState: Int {
      In this state, if an indicator's [hidesWhenStopped]([ESTMusicIndicatorView hidesWhenStopped]) is `YES`, the indicator becomes hidden.
      Or if an indicator's [hidesWhenStopped]([ESTMusicIndicatorView hidesWhenStopped]) is `NO`, the indicator shows idle bars.
      */
-    case ESTMusicIndicatorViewStateStopped
+    case stopped
     
     /**
      Playing state of an indicator view.
      In this state, an indicator shows oscillatory animated bars.
      */
-    case ESTMusicIndicatorViewStatePlaying
+    case playing
     
     /**
      Paused state of an indicator view.
      In this state, an indicator shows idle bars.
      */
-    case ESTMusicIndicatorViewStatePaused
+    case paused
 }
 
 public class ESTMusicIndicatorView: UIView {
@@ -69,7 +69,7 @@ public class ESTMusicIndicatorView: UIView {
     
     public var hidesWhenStopped: Bool = true {
         didSet {
-            if state == .ESTMusicIndicatorViewStateStopped {
+            if state == .stopped {
                 isHidden = hidesWhenStopped
             }
         }
@@ -89,15 +89,15 @@ public class ESTMusicIndicatorView: UIView {
      The initial value is `ESTMusicIndicatorViewStateStopped`.
      */
     
-    public var state: ESTMusicIndicatorViewState = .ESTMusicIndicatorViewStateStopped {
+    public var state: ESTMusicIndicatorViewState = .stopped {
         didSet {
-            if state == .ESTMusicIndicatorViewStateStopped {
+            if state == .stopped {
                 stopAnimating()
                 if hidesWhenStopped {
                     isHidden = true
                 }
             } else {
-                if state == .ESTMusicIndicatorViewStatePlaying {
+                if state == .playing {
                     startAnimating()
                 } else {
                     stopAnimating()
@@ -126,8 +126,8 @@ public class ESTMusicIndicatorView: UIView {
         addSubview(contentView)
         prepareLayoutPriorities()
         setNeedsUpdateConstraints()
-        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationDidEnterBackground(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ESTMusicIndicatorView.applicationDidEnterBackground(notification:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ESTMusicIndicatorView.applicationWillEnterForeground(notification:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
     private func prepareLayoutPriorities() {
@@ -213,7 +213,7 @@ public class ESTMusicIndicatorView: UIView {
 	
 	@objc
 	private func applicationWillEnterForeground(notification: NSNotification) {
-		if state == .ESTMusicIndicatorViewStatePlaying {
+		if state == .playing {
 			startAnimating()
 		}
 	}
